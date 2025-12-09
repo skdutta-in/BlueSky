@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BlueSky Weather Pro</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="Favicon.pmng">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <h1>🌤 BlueSky Weather Pro</h1>
+  <div class="controls">
+    <input id="search" list="cities" placeholder="Search city">
+    <datalist id="cities"></datalist>
+    <button id="searchBtn">Search</button>
+    <button id="geoBtn">📍</button>
+    <select id="units">
+      <option value="metric">°C</option>
+      <option value="imperial">°F</option>
+    </select>
+  </div>
+</header>
+
+<div id="alertBar"></div>
+
+<main>
+<section class="current"></section>
+<section>
+<h2>Hourly Forecast</h2>
+<input type="range" id="hourSlider" min="0" max="7" value="0">
+<div id="hourData"></div>
+</section>
+<section class="forecast">
+<h2>5 Day Forecast</h2>
+<div id="forecastGrid"></div>
+</section>
+<section>
+<h2>Weather Chart</h2>
+<canvas id="tempChart"></canvas>
+</section>
+<section>
+<h2>Map View</h2>
+<div id="map"></div>
+</section>
+</main>
+
+<footer>Data courtesy OpenWeather</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
